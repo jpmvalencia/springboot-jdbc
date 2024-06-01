@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Manufacturer</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+    <div class="container">
+        <form method="post" class="container">
+            <h2 style="text-align: center;">Car Model</h2>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="engine">Engine:</label>
+                <input type="text" name="engine" id="engine" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="fuelType">Fuel Type:</label>
+                <select name="fuelType" id="fuelType" class="form-control" required>
+                    <option value="GASOLINE">GASOLINE</option>
+                    <option value="DIESEL">DIESEL</option>
+                    <option value="ELECTRIC">ELECTRIC</option>
+                    <option value="HYBRID">HYBRID</option>
+                    <option value="NATURAL_GAS">NATURAL_GAS</option>
+                    <option value="OTHER">OTHER</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="transmissionType">Transmission Type:</label>
+                <select name="transmissionType" id="transmissionType" class="form-control" required>
+                    <option value="MANUAL">MANUAL</option>
+                    <option value="AUTOMATIC">AUTOMATIC</option>
+                    <option value="CVT">CVT</option>
+                    <option value="SEMI_AUTOMATIC">SEMI_AUTOMATIC</option>
+                    <option value="DUAL_CLUTCH">DUAL_CLUTCH</option>
+                    <option value="OTHER">OTHER</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input type="number" name="price" id="price" class="form-control" step="0.01" min="0" max="9999999.99" required>
+            </div>
+            <div class="form-group">
+                <label for="releaseYear">Release Year:</label>
+                <input type="number" name="releaseYear" id="releaseYear" class="form-control" required>
+            </div>
+            <div style="text-align: center;">
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

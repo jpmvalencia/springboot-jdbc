@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Manufacturer</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+    <div class="container">
+        <form method="post" class="container">
+            <div class="row">
+                <div class="col-6">
+                    <h2 style="text-align: center;">Manufacturer</h2>
+                    <div class="form-group">
+                        <label for="manufacturerName">Name:</label>
+                        <input type="text" name="manufacturerName" id="manufacturerName" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="manufacturerCountry">Country:</label>
+                        <input type="text" name="manufacturerCountry" id="manufacturerCountry" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="manufacturerCeo">CEO:</label>
+                        <input type="text" name="manufacturerCeo" id="manufacturerCeo" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="manufacturerEmail">Email:</label>
+                        <input type="email" name="manufacturerEmail" id="manufacturerEmail" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="manufacturerFoundedYear">Founded Year:</label>
+                        <input type="number" name="manufacturerFoundedYear" id="manufacturerFoundedYear" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <h2 style="text-align: center;">Dealer</h2>
+                    <div class="form-group">
+                        <label for="dealerName">Name:</label>
+                        <input type="text" name="dealerName" id="dealerName" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dealerEmail">Email:</label>
+                        <input type="email" name="dealerEmail" id="dealerEmail" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dealerCapacity">Capacity:</label>
+                        <input type="number" name="dealerCapacity" id="dealerCapacity" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dealerLocation">Location:</label>
+                        <input type="text" name="dealerLocation" id="dealerLocation" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dealerRating">Rating:</label>
+                        <input type="number" name="dealerRating" id="dealerRating" class="form-control" step="0.01" min="0" max="9.99" required>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

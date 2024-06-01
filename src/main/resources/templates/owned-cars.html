@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owned Cars</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="container">
+        <h2 style="text-align: center;">Owned Cars</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Manufacturer</th>
+                    <th scope="col">Car Model</th>
+                    <th scope="col">Purchase Date</th>
+                    <th scope="col">Condition</th>
+                    <th scope="col">Warranty Months</th>
+                    <th scope="col">Dealer</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="car : ${ownedCars}">
+                    <th scope="row" th:text="${car.id}"></th>
+                    <td th:text="${car.manufacturer}"></td>
+                    <td th:text="${car.carModel}"></td>
+                    <td th:text="${car.purchaseDate}"></td>
+                    <td th:text="${car.condition}"></td>
+                    <td th:text="${car.warrantyMonths}"></td>
+                    <td th:text="${car.dealer.id}"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="text-align: center;">
+            <a th:href="@{/owned-cars/buy/{id}(id=${customerId})}" class="btn btn-primary">Buy a Car</a>
+        </div>
+    </div>
+</body>
+</html>

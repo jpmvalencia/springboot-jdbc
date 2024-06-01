@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Car</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+    <div class="container">
+        <form method="post" class="container">
+            <h2 style="text-align: center;">Buy Car</h2>
+            <div class="form-group">
+                <label for="manufacturer">Manufacturer:</label>
+                <input type="text" name="manufacturer" id="manufacturer" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="carModel">Car Model:</label>
+                <input type="text" name="carModel" id="carModel" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="purchaseDate">Purchase Date:</label>
+                <input type="date" name="purchaseDate" id="purchaseDate" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="condition">Condition:</label>
+                <select name="condition" id="condition" class="form-control" required>
+                    <option value="NEW">NEW</option>
+                    <option value="EXCELLENT">EXCELLENT</option>
+                    <option value="GOOD">GOOD</option>
+                    <option value="FAIR">FAIR</option>
+                    <option value="POOR">POOR</option>
+                    <option value="OTHER">OTHER</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="warrantyMonths">Warranty Months:</label>
+                <input type="number" name="warrantyMonths" id="warrantyMonths" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="manufacturerDealer">Manufacturer Dealer:</label>
+                <select name="manufacturerDealer" id="manufacturerDealer" class="form-control" required>
+                    <option th:value="${dealer.id}" th:each="dealer : ${dealers}" th:text="${dealer.name}"></option>
+                </select>
+            </div>
+            <div style="text-align: center;">
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

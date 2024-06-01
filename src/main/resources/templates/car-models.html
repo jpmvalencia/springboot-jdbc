@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="container">
+        <h2 style="text-align: center;">All Car Models</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Engine</th>
+                    <th scope="col">Fuel Type</th>
+                    <th scope="col">Transmission Type</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Release Year</th>
+                    <th scope="col">Manufacturer</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="car : ${cars}">
+                    <th scope="row" th:text="${car.id}"></th>
+                    <td th:text="${car.name}"></td>
+                    <td th:text="${car.engine}"></td>
+                    <td th:text="${car.fuelType}"></td>
+                    <td th:text="${car.transmissionType}"></td>
+                    <td th:text="${car.price}"></td>
+                    <td th:text="${car.releaseYear}"></td>
+                    <td th:text="${manufacturerId}"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="text-align: center;">
+            <a th:href="@{/cars/add-car/{id}(id=${manufacturerId})}" class="btn btn-primary">Add Car</a>
+        </div>
+    </div>
+</body>
+</html>

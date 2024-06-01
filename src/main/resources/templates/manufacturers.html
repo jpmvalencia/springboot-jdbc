@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manufacturers</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="container">
+        <h2 style="text-align: center;">All Manufacturers</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Country</th>
+                    <th scope="col">CEO</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Founded Year</th>
+                    <th scope="col">Dealer</th>
+                    <th scope="col">Car Models</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="manufacturer : ${manufacturers}">
+                    <th scope="row" th:text="${manufacturer.id}"></th>
+                    <td th:text="${manufacturer.name}"></td>
+                    <td th:text="${manufacturer.country}"></td>
+                    <td th:text="${manufacturer.ceo}"></td>
+                    <td th:text="${manufacturer.email}"></td>
+                    <td th:text="${manufacturer.foundationYear}"></td>
+                    <td><div style="text-align: center;"><a th:href="@{/dealer/{id}(id=${manufacturer.dealer.id})}" class="btn btn-primary">Dealer <span th:text="${manufacturer.dealer.id}"></span></a></span></div></td>
+                    <td><div style="text-align: center;"><a th:href="@{/cars/{id}(id=${manufacturer.id})}" class="btn btn-primary"><span th:text="${manufacturer.name}"></span> Cars</a></span></div></td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="text-align: center;">
+            <a href="/manufacturers/add-manufacturer" class="btn btn-primary">Add Manufacturer</a>
+        </div>
+    </div>
+</body>
+</html>

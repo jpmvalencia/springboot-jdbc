@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+    <div class="container">
+        <h2 style="text-align: center;">All Customers</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Owned Cars</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="customer : ${customers}">
+                    <th scope="row" th:text="${customer.id}"></th>
+                    <td th:text="${customer.name}"></td>
+                    <td th:text="${customer.email}"></td>
+                    <td th:text="${customer.phone}"></td>
+                    <td th:text="${customer.address}"></td>
+                    <td th:text="${customer.gender}"></td>
+                    <td><div style="text-align: center;"><a th:href="@{/owned-cars/{id}(id=${customer.id})}" class="btn btn-primary">Owned Cars <span th:text="${customer.id}"></span></a></div></td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="text-align: center;">
+            <a href="customers/add-customer" class="btn btn-primary">Add Customer</a>
+        </div>
+    </div>
+</body>
+
+</html>
